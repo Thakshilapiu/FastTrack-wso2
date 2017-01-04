@@ -1,0 +1,61 @@
+<wsdl:definitions xmlns:axis2="http://quickstart.samples/"
+xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+xmlns:ns="http://quickstart.samples/xsd" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+targetNamespace="http://quickstart.samples/">
+<wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+attributeFormDefault="qualified" elementFormDefault="qualified"
+targetNamespace="http://quickstart.samples/xsd">
+<xs:element name="getPrice">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="symbol" nillable="true" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="getPriceResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="return" nillable="true" type="xs:double" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="getPriceMessage">
+<wsdl:part name="part1" element="ns:getPrice" />
+</wsdl:message>
+<wsdl:message name="getPriceResponseMessage">
+<wsdl:part name="part1" element="ns:getPriceResponse" />
+</wsdl:message>
+<wsdl:portType name="StockQuoteServicePortType">
+<wsdl:operation name="getPrice">
+<wsdl:input message="axis2:getPriceMessage" />
+<wsdl:output message="axis2:getPriceResponseMessage" />
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="StockQuoteServiceSOAP11Binding" 
+type="axis2:StockQuoteServicePortType">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+style="document" />
+<wsdl:operation name="getPrice">
+<soap:operation soapAction="urn:getPrice" style="document" />
+<wsdl:input>
+<soap:body use="literal" namespace="http://quickstart.samples/"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal" namespace="http://quickstart.samples/"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="StockQuoteService">
+<wsdl:port name="StockQuoteServiceSOAP11port" 
+    binding="axis2:StockQuoteServiceSOAP11Binding">
+<soap:address
+location="http://localhost:8080/axis2/services/StockQuoteService"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

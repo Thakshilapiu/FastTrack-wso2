@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<school>
+	<student id="1001">
+		<firstname>gamage</firstname>
+		<lastname>Arachchi</lastname>
+		<city>kandy</city>
+	</student>
+	<student id="2001">
+		<firstname>Sapumali</firstname>
+		<lastname>Pathirana</lastname>
+		<city>Galle</city>
+
+	</student>
+</school>

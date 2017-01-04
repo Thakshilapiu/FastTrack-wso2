@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service name="OrderService">
+
+    <description>
+        Simple implementation of a OrderprocessingService.
+    </description>
+
+    <parameter name="ServiceClass">com.wso2.thakshila.services.orderprocessing</parameter>
+
+    <operation name="addItems" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://services.thakshila.swo2.com/xsd">
+        <actionMapping>http://services.thakshila.wso2.com/xsd/addItems</actionMapping>
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+    </operation>
+
+    <operation name="calculateOrderAmount" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://services.thakshila.swo2.com/xsd">
+        <actionMapping>http://services.thakshila.wso2.com/xsd/calculateOrderAmount</actionMapping>
+        <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </operation>
+
+
+
+</service>

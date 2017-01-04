@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.7.3  Built on : May 30, 2016 (04:08:57 BST) -->
+<serviceGroup>
+    <service name="StockQuoteService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="samples.quickstart.StockQuoteServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">samples.quickstart.StockQuoteServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="getPrice" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://quickstart.samples/">
+            <actionMapping>urn:getPrice</actionMapping>
+            <outputActionMapping>http://quickstart.samples/StockQuoteServicePortType/getPriceResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

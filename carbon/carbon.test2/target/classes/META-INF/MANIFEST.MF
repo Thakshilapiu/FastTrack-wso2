@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Private-Package: web.thakshila
+Built-By: thakshila
+Tool: Bnd-0.0.238
+Bundle-Name: carbon.test2
+Created-By: Apache Maven Bundle Plugin
+Bundle-Version: 0.0.1.SNAPSHOT
+Build-Jdk: 1.7.0_80
+Bnd-LastModified: 1474956966842
+Bundle-ManifestVersion: 2
+Import-Package: javax.xml.namespace;version="0.0.0"
+Carbon-Component: UIBundle
+Bundle-SymbolicName: carbon.test2
+

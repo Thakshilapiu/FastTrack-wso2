@@ -1,0 +1,53 @@
+<h2>Add new Employee</h2>
+<form method="post">
+ <table>
+  <tr>
+   <td align="right">ID:</td>
+   <td align="left"><input type="text" name="id" /></td>
+  </tr>
+  <tr>
+   <td align="right">Name:</td>
+   <td align="left"><input type="text" name="name" /></td>
+  </tr>
+  <tr>
+   <td align="right">Age:</td>
+   <td align="left"><input type="text" name="age" /></td>
+  </tr>
+  <tr>
+   <td align="right">Town:</td>
+   <td align="left"><input type="text" name="town" /></td>
+  </tr>
+
+ </table>
+ <br> <input type="submit" value="Add Employee">
+</form>
+ 
+<%
+// if it's post request to add a employee
+if(request.getMethod() == "POST"){
+ var id = request.getParameter("id");
+ var name = request.getParameter("name");
+ var age = request.getParameter("age");
+ var town = request.getParameter("town");
+
+  
+ if(!id || !name || !age || !town || !salary){
+   response.status = 400;
+   print("<script>alert('Employee details cannot be empty!');</script>");
+  } else {
+   json.employees.push(
+   {
+    "id":id, "name":name, "age": age, "town":town, "salary":salary
+   }
+   );
+ 
+   var file = new File("employees.json");
+   file.open("w");
+   file.write(json);
+   file.close();
+   response.status = 200;
+  }
+}
+ 
+%>
+<hr />

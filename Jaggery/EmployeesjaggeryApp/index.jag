@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<%
+var json = require("employees.json");
+%>
+</head>
+<body>
+ <h1>Employee Details</h1>
+ <%
+ include ("new_employee.jag");
+ %>
+ <h2>List all Employees</h2>
+ <table  border="2">
+  <tr>
+   <th>Emplyee ID</th>
+   <th>Name</th>
+   <th>Age</th>
+   <th>Town</th>
+
+  </tr>
+  <%
+  for (var i in json.employees){
+%>
+  <tr>
+   <td><%=json.employees[i].id%></td>
+   <td><%=json.employees[i].name%></td>
+   <td><%=json.employees[i].age%></td>
+   <td><%=json.employees[i].town%></td>
+  </tr>
+  <%
+ }
+ 
+ %>
+ 
+ </table>
+</body>
+ 
+</html>
